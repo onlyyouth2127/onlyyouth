@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>testing</title>
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --card: #ffffff;
+      --ink: #1a1a1a;
+      --muted: #8a8a8a;
+      --line: #ececec;
+      --accent: #d4502a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 64px 24px 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    header .eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    header h1 {
+      font-size: 44px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery figure {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .gallery figure:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      background: #f0f0f0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* 手机版:格子变单列 */
+    @media (max-width: 700px) {
+      .gallery { grid-template-columns: 1fr; }
+      header h1 { font-size: 34px; }
+      .gallery img { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">Gallery</div>
+    <h1>testing</h1>
+  </header>
+
+  <main>
+    <div class="gallery">
+      <figure><img src="1.jpeg" alt="图片 1"></figure>
+      <figure><img src="2.jpeg" alt="图片 2"></figure>
+      <figure><img src="3.jpeg" alt="图片 3"></figure>
+      <figure><img src="4.jpeg" alt="图片 4"></figure>
+      <figure><img src="5.jpeg" alt="图片 5"></figure>
+    </div>
+  </main>
+
+  <footer>
+    testing &middot; 2026
+  </footer>
+</body>
+</html>
